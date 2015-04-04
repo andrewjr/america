@@ -1,0 +1,4 @@
+--arm --This is arm --arm.jpg --dog-horse-cat
+--dog --This is dog --dog.jpg --arm-horse
+--horse --This is horse --horse.jpg --arm-dog
+--cat --This is cat -- -- dog-horse-arm
