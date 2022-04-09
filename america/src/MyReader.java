@@ -1,6 +1,5 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +9,7 @@ import java.util.List;
  * Created by arodriguez on 4/3/2015.
  */
 public class MyReader {
+    private static final String SCRIPT = "Resources//Texts//script.txt";
 
     public static HashMap<String, StoryStep> main() {
         HashMap<String, StoryStep> map = new HashMap<>();
@@ -21,8 +21,11 @@ public class MyReader {
         try {
 
             String sCurrentLine;
+            ClassLoader cl = Thread.currentThread().getContextClassLoader();
+            InputStream is = cl.getResourceAsStream(SCRIPT);
+            InputStreamReader isReader = new InputStreamReader(is, StandardCharsets.UTF_8);
 
-            br = new BufferedReader(new FileReader("src/Resources/Texts/script.txt" ));
+            br = new BufferedReader(isReader);
 
             while ((sCurrentLine = br.readLine()) != null) {
 

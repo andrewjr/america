@@ -60,7 +60,8 @@ public class CreateUI extends JFrame{
 
         System.out.println(file);
         if(file != null){
-            ImageIcon select = new ImageIcon("src/Resources/Images/" + file);
+            java.net.URL imgUrl = getClass().getResource("Resources/Images/" + file);
+            ImageIcon select = new ImageIcon(imgUrl);
 
             JButton selectb = new JButton(select);
             selectb.setBorder(new EmptyBorder(3, 0, 3, 0));
